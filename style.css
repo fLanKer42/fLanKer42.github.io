@@ -1,22 +1,17 @@
-.div-top {
-    height: 100vh;
-    background: linear-gradient(to bottom right,#a9caffad, #0349bba5);
-    background-repeat:no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.bg-jumbo {
+    background-image: url('./images/background.jpg');
+    background-position: top;
 }
-.top-mid {
+.text-white {
+    color: white;
+}
+.fakeimg {
+    height: 200px;
+    background: rgb(243, 241, 241);
     text-align: center;
-    font-size: xx-large;
-    font-weight: bold;
-    font-family: sans-serif;
-    color: darkred;
 }
-.top-mid-special {
-    color:gray;
-    font-size: x-large;
-    font-style: italic;
-    font-weight: normal;
+.boxer {
+    border-style: ridge;
+    margin-bottom: 10px;
+    padding-left: 10px;
 }
