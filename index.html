@@ -1,238 +1,122 @@
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <title>Dhruv Rai</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-	    	<meta name="google-site-verification" content="vS-58QI_Q9sqjTVq-g5Ge8yI3RK8sAHoXd9HSJqSW-E" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-		<!--<link rel="stylesheet" href="./style.css">-->
-	    	<style>
-			.bg-jumbo {
-			    background-image: url('./images/background.jpg');
-			    background-position: top;
-			}
-			.text-white {
-			    color: white;
-			}
-			.fakeimg {
-			    height: 200px;
-			    background: rgb(243, 241, 241);
-			    text-align: center;
-			}
-			.boxer {
-			    border-style: ridge;
-			    margin-bottom: 10px;
-			    padding-left: 10px;
-			}
-	    	</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flanker42 Data Solutions</title>
+    <meta name="description" content="Professional Data Consultation Services.">
+    <style>
+        /* --- Shared CSS (Elegant Theme) --- */
+        :root {
+            --primary: #0f172a;    /* Deep Navy */
+            --accent: #3b82f6;     /* Royal Blue */
+            --text: #334155;       /* Slate */
+            --bg: #f8fafc;         /* Off-white */
+            --white: #ffffff;
+            --border: #e2e8f0;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.7; color: var(--text); background: var(--bg); }
+        h1, h2, h3 { color: var(--primary); line-height: 1.2; font-weight: 700; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        
+        /* Navigation */
+        nav { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+        .nav-inner { max-width: 1000px; margin: 0 auto; padding: 1.2rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.3rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
+        .nav-links a { margin-left: 2rem; font-size: 0.95rem; font-weight: 500; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
 
+        /* Hero */
+        .hero { padding: 8rem 1.5rem 6rem; text-align: center; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; letter-spacing: -1px; }
+        .hero p { font-size: 1.25rem; color: #64748b; margin-bottom: 2.5rem; }
+        .btn { background: var(--primary); color: var(--white); padding: 1rem 2rem; border-radius: 6px; font-weight: 600; display: inline-block; }
+        .btn:hover { background: var(--accent); transform: translateY(-2px); }
 
+        /* Service Section */
+        .service-section { background: var(--white); padding: 5rem 1.5rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .consultation-card { text-align: center; max-width: 700px; margin: 0 auto; }
+        .consultation-card h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .consultation-card p { font-size: 1.1rem; color: #64748b; margin-bottom: 2rem; }
 
-	</head>
+        /* Contact Form */
+        .contact-section { padding: 5rem 1.5rem; max-width: 600px; margin: 0 auto; }
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem; }
+        input, textarea { width: 100%; padding: 0.8rem; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; font-size: 1rem; }
+        input:focus, textarea:focus { outline: 2px solid var(--accent); border-color: transparent; }
+        
+        /* Footer */
+        footer { background: var(--primary); color: #94a3b8; padding: 3rem 1.5rem; text-align: center; font-size: 0.9rem; }
+        .address { margin-top: 1rem; color: #64748b; font-style: normal; }
 
+        @media(max-width: 768px) { .hero h1 { font-size: 2.5rem; } }
+    </style>
+</head>
+<body>
 
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">Flanker42</a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Consultation</a>
+                <a href="about.html">About Founder</a>
+            </div>
+        </div>
+    </nav>
 
+    <section class="hero">
+        <h1>Strategic Data Consultation</h1>
+        <p>Expert guidance on data architecture, ETL automation, and scalable analytics infrastructure.</p>
+        <a href="#contact" class="btn">Book a Consultation</a>
+    </section>
 
+    <section class="service-section">
+        <div class="container">
+            <div class="consultation-card">
+                <h2>Our Approach</h2>
+                <p>We do not sell generic software packages. We offer high-level consultation to diagnose bottlenecks in your data pipelines and engineer custom roadmaps for growth.</p>
+                <ul style="text-align: left; display: inline-block; color: #475569; margin-top: 1rem; list-style: circle;">
+                    <li style="margin-bottom: 0.5rem;">Pipeline Architecture & Optimization</li>
+                    <li style="margin-bottom: 0.5rem;">Automated Reporting & Dashboards</li>
+                    <li style="margin-bottom: 0.5rem;">Database Schema Design</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-	<body>
-		<div class="jumbotron text-center bg-jumbo" style="margin-bottom:0">
-			<h1 class="text-white">Dhruv Rai</h1>
-			<p class="text-white">Third year undergraduate engineering student, IIT Kharagpur <br /> @fLanKer42</p> 
-		  </div>
-		<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
-		  <a class="navbar-brand p-2" href="#"><img src="images/IMG_20230606_151450_065.jpg" alt="Photo" style="width:40px; border-radius: 18px;"/></a>
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-			<span class="navbar-toggler-icon"></span>
-		  </button>
-		  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-			<ul class="navbar-nav">
-			  <li class="nav-item p-2">
-				<a class="nav-link" href="#education">Education and Academics</a>
-			  </li>
-			  <li class="nav-item p-2">
-				<a class="nav-link" href="#project">Projects and Experience</a>
-			  </li>
-			  <li class="nav-item p-2">
-				<a class="nav-link" href="#skill">Skills</a>
-			  </li> 
-			  <li class="nav-item p-2">
-				<a class="nav-link" href="#contact">Contact</a>
-			  </li>
-			  <li class="nav-item p-2">
-				<a class="nav-link" href="./assets/cvGenerate.pdf">CV pdf</a>
-			  </li>
-			</ul>
-		  </div>  
-		</nav>
-		<br /> <br /><br /><br />
-		<div class="container-fluid" style="margin-top:30px">
-			<div class="row">
-			
-			<div class="col-md-7 rr">
-				<div class="boxer">
-					<h2>Objective</h2>
-					<p>I am a programmer actively seeking interns or projects with organisations of repute. I am looking for new experiences and learnings to strengthen my career in the future as a software developer.</p>
-				</div>
-				<div class="boxer">
-					<h3>Experience</h3>
-					<ul><a name="project"></a>
-						<li><h4>Web developer at <a href="http://www.echospace.in">Echospace.in</a></h4>
-							<ul>
-								<li>Worked as a full stack web developer at Echospace.in, a startup working for helping people in trouble looking for resources.</li>
-								<li>Worked with mongodb, express and node to integrate analytic tools, notification and user profile into the website.</li>
-								<li>Built web pages using bootstrap and integrated with server using ejs.</li>	  
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<div class="boxer">
-					<h3>Projects</h3>
-					<ul>
-						<li><h4>Cowin Check Slot Availability </h4><a href="https://github.com/fLanKer42/cowinCheckAvailability.git" class="btn btn-outline-success" role="button">Repository-Python</a> <a href="https://github.com/fLanKer42/cowinSlot.git" class="btn btn-outline-success" role="button">Repository-App</a>
-							<ul>
-								<li>Used the cowin API from the Indian Governments API setu to build a program that tracks vaccination slots.</li>
-								<li>Used tkinter to build a user interface, urllib to fetch data from the cowin api and email and smtplib to notify user on email when slots are available.</li>
-								<li>Building a smartphone app using react-native that makes the process more accessible to a common Indian person</li> 
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<div class="boxer">
-					<a name="education"></a>
-					<h3>Education</h3>
-					<ul>
-						<li><h4>IIT Kharagpur</h4>
-							<h5>CGPA: 7.98/10 (till semester 4 of 10)</h5>
-							<ul>
-							<li><p>B.tech + M.Tech (dual degree)<br />Quality Engineering Design and Manufacturing (Mechanical Engineering Vertical)<br />
-							Department of Industrial and Systems Engineering</p></li><li><p>Pursuing micro-specialisation in Artificial Intelligence and Applications <br />Centre of Excellence in Artificial Intelligence IIT Kharagpur</p></li>
-							</ul>
-						</li>
-						<li><h4>Schooling</h4>
-							<ul>
-								<li>
-									<p>12th grade: Jayshree Periwal High School, Jaipur<br />
-									Score: 92.4%<br />Subjects: Physics, Chemistry, Maths, English, PE</p>
-								</li>
-								<li>
-									<p>10th Grade: Parvati Radhakishen Fomra School, Mathura<br />
-									CGPA: 10/10</p>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<div class="boxer" style="text-align: center;">
-					<a name="contact"></a>
-					<h3>Contact Me</h3>
-					+91-9412277458<br />
-					<a href="mailto:dhruv.rai2001@gmail.com">dhruv.rai2001@gmail.com</a><br />
-					<a href="mailto:dhruv.rai2001@iitkgp.ac.in">dhruv.rai2001@iitkgp.ac.in</a>
-					<p>E-324, Azad Hall of Residence, IIT Kharagpur</p>
-				</div>
+    <section id="contact" class="contact-section">
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <h2>Contact Us</h2>
+            <p>Fill out the form below or email us directly at <br> <a href="mailto:dhruv.rai2001@gmail.com" style="color: var(--accent);">dhruv.rai2001@gmail.com</a></p>
+        </div>
 
-			</div>
-			<div class="col-md-5 rr">
-				<h3>Summary</h3>
-				<table class="table table-striped">
-					<tr>
-						<th>Branch: </th>
-						<th>Engineering Product Design and Manufacturing (QEDM)</th>
-					</tr>
-					<tr>
-						<th>Department: </th>
-						<th>Industrial and Systems Engineering</th>
-					</tr>
-					<tr>
-						<th>CGPA: </th>
-						<th>7.98 (till fourth semester)</th>
-					</tr>
-					<tr>
-						<th>College: </th>
-						<th>IIT Kharagpur</th>
-					</tr>
-				</table>
-				<table class="table table-striped">
-					<tr>
-						<th>Areas: </th>
-						<th>
-							<span class="badge badge-success">Software Engineering</span>
-							<span class="badge badge-success">Servers & Web APIs</span>
-							<span class="badge badge-success">Web development</span>
-							<span class="badge badge-success">Machine Learning</span>
-						</th>
-					</tr>
-					<tr>
-						<th>Programming Languages: </th>
-						<a name="skill"></a>
-						<th>
-							<span class="badge badge-primary">Python</span>
-							<span class="badge badge-primary">C/C++</span>
-							<span class="badge badge-primary">JavaScript</span>
-							<span class="badge badge-primary">Matlab</span>
-						</th>
-					</tr>
-					<tr>
-						<th>I am comfortable with: </th>
-						<th>
-							<span class="badge badge-pill badge-dark">Node.js</span>
-							<span class="badge badge-pill badge-dark">Mongodb</span>
-							<span class="badge badge-pill badge-dark">Express.js</span>
-							<span class="badge badge-pill badge-dark">React.js</span>
-							<span class="badge badge-pill badge-dark">RESTful APIs</span>
-							<span class="badge badge-pill badge-dark">sklearn</span>
-							<span class="badge badge-pill badge-dark">pandas</span>
-							<span class="badge badge-pill badge-dark">HTML, CSS</span>
-						</th>
-					</tr>
-				</table>
-				<table class="table table-striped">
-					<tr>
-						<th>College Courses Completed: </th>
-						<th>
-							<span class="badge badge-pill badge-light">Programming and Data Structures</span>
-							<span class="badge badge-pill badge-light">AI foundations</span>
-							<span class="badge badge-pill badge-light">Praobability and Stats</span>
-							<span class="badge badge-pill badge-light">Operations Research</span>
-							<span class="badge badge-pill badge-light">Object Oriented System Design</span>
-							<span class="badge badge-pill badge-light">Geometric Modelling</span>
-							<span class="badge badge-pill badge-light">Mathematics I and II</span>
-							<span class="badge badge-pill badge-light">Basic Electronics</span>
-							<span class="badge badge-pill badge-light">Core Mechanical Engg. Subjects...</span>
-						</th>
-					</tr>
-					<tr>
-						<th>MOOCs Completed: </th>
-						<th>
-							<span class="badge badge-secondary">Python For Everyone</span>
-							<span class="badge badge-secondary">Data Structures and Algorithms</span>
-							<span class="badge badge-secondary">Responsive Web Development</span>
-							<span class="badge badge-secondary">Machine Learning by Andrew Ng</span>
-						</th>
-					</tr>
-				</table>
-			</div>
-			</div>	  
-	</body>
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+        </form>
+    </section>
 
+    <footer>
+        <p>&copy; 2025 Flanker42 Data Solutions.</p>
+        <address class="address">
+            WJM9+PP7 Block 5, 450, KHB Colony<br>
+            5th Block, Koramangala, Bengaluru, Karnataka 560095
+        </address>
+    </footer>
+
+</body>
 </html>
-	
-	
-	
-
-<!--                    
-               /////////////
-              ///              क्रोधाद्भवति संमोह: संमोहात्स्मृतिविभ्रम:।
-             //                स्मृतिभ्रंशाद्बुद्धिनाशो बुद्धिनाशात्प्रणश्यति॥
-            ////////          
-           //                ||           ///////
-          //                 ||   ||          ||
-         //                  |||||||     //////
-                                  ||     ||
-  @fLanKer42                      ||     \\\\\\\
--->
