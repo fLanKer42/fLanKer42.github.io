@@ -3,107 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Flanker42 Data Solutions</title>
-    <style>
-        /* --- Shared CSS (Matches Index) --- */
-        :root { --primary: #0f172a; --accent: #3b82f6; --text: #334155; --bg: #f8fafc; --white: #ffffff; --border: #e2e8f0; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.7; color: var(--text); background: var(--bg); }
-        h1, h2, h3 { color: var(--primary); line-height: 1.2; font-weight: 700; }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        
-        nav { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
-        .nav-inner { max-width: 1000px; margin: 0 auto; padding: 1.2rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.3rem; font-weight: 800; color: var(--primary); letter-spacing: -0.5px; }
-        .nav-links a { margin-left: 2rem; font-size: 0.95rem; font-weight: 500; }
-        .nav-links a:hover, .nav-links a.active { color: var(--accent); }
-
-        /* Profile Specifics */
-        .profile-header { background: var(--white); padding: 5rem 1.5rem; text-align: center; border-bottom: 1px solid var(--border); }
-        .profile-header h1 { font-size: 3rem; margin-bottom: 0.5rem; }
-        .profile-header h3 { font-size: 1.25rem; color: var(--accent); font-weight: 500; margin-bottom: 2rem; }
-        
-        .content-container { max-width: 800px; margin: 0 auto; padding: 4rem 1.5rem; }
-        .bio-section { margin-bottom: 3rem; }
-        .bio-section h2 { font-size: 1.8rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--border); }
-        .bio-section p { margin-bottom: 1.5rem; font-size: 1.1rem; color: #475569; }
-        
-        .exp-item { margin-bottom: 2rem; }
-        .exp-item h4 { font-size: 1.2rem; color: var(--primary); font-weight: 700; }
-        .exp-item span { font-size: 0.9rem; color: #94a3b8; display: block; margin-bottom: 0.5rem; }
-        
-        footer { background: var(--primary); color: #94a3b8; padding: 3rem 1.5rem; text-align: center; font-size: 0.9rem; }
-        .address { margin-top: 1rem; color: #64748b; font-style: normal; }
-    </style>
+    <title>About - Dhruv Rai</title>
+    <meta name="description" content="Dhruv Rai — AI Product Manager and Builder-PM. Shipping agentic AI for SMBs at Zoca. IIT Kharagpur.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <div class="nav-inner">
-            <a href="index.html" class="logo">Flanker42</a>
-            <div class="nav-links">
-                <a href="index.html">Consultation</a>
-                <a href="about.html" class="active">About Founder</a>
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="topbar-left">
+                <a href="index.html"><span><span class="signal"></span>DHRUV.RAI / FLANKER42</span></a>
+                <span style="color: var(--muted);">Bengaluru, IN</span>
+            </div>
+            <div class="topbar-right">
+                <a href="work.html">Work</a>
+                <a href="about.html">About</a>
+                <a href="toolkit.html">Toolkit</a>
+                <a href="contact.html">Contact</a>
             </div>
         </div>
-    </nav>
+    </div>
 
-    <header class="profile-header">
-        <h1>Dhruv Rai</h1>
-        <h3>Founder & Principal Consultant</h3>
-        <p style="max-width: 600px; margin: 0 auto; color: #64748b;">
-            IIT Kharagpur Graduate &bull; Industrial Systems Engineer &bull; Data Architect
-        </p>
-    </header>
+    <div class="section-header" id="about">
+        <h2>About</h2>
+        <span class="label">03 / Operator notes</span>
+    </div>
+    <section class="about">
+        <div class="about-label">// principles</div>
+        <div class="about-body">
+            <p>I'm a <em>Builder-PM</em> — PM by title, builder by instinct. Most AI products today are demos with pricing pages. The work I care about is the unglamorous plumbing: eval loops, feedback systems, the parts that turn a model into a product someone renews.</p>
+            <p>IIT Kharagpur, Dual Degree in Industrial &amp; Systems Engineering with an AI micro-specialization. M.Tech thesis: a content-based recommendation system for short-form fashion video using Mask R-CNN — engineered the feature-extraction pipeline (mAP <em>0.76</em>, 35% over baseline).</p>
+            <p>Outside that: elected Hall President of Azad Hall at IIT KGP — 730+ students, ₹2.7Cr annual budget, 80-member council. I learned more about ops there than in any classroom.</p>
 
-    <main class="content-container">
-        <section class="bio-section">
-            <h2>The Vision</h2>
-            <p>
-                Dhruv Rai established Flanker42 Data Solutions to bridge the gap between raw data and business decision-making. With a background in Industrial Systems Engineering from IIT Kharagpur[cite: 20, 21], Dhruv specializes in creating scalable, AI-driven solutions that automate quality control and streamline complex pipelines.
-            </p>
-            <p>
-                His expertise lies in constructing robust reporting layers and automated ETL pipelines that have powered analytics for over 1,000 businesses[cite: 24, 27].
-            </p>
-        </section>
-
-        <section class="bio-section">
-            <h2>Professional Experience</h2>
-            
-            <div class="exp-item">
-                <h4>Product Analyst @ Zoca</h4>
-                <span>Dec 2024 - Present</span>
-                <p>Driving business outcomes through centralized client communications and automated quality control pipelines using cutting-edge LLM technologies[cite: 23, 30].</p>
-            </div>
-
-            <div class="exp-item">
-                <h4>Product Analyst @ Wishlink</h4>
-                <span>May 2024 - Dec 2024</span>
-                <p>Spearheaded 0-1 product analytics for an online shopping app achieving significant GMV milestones. Automated ETL pipelines with DBT and SQL to visualize critical user behaviors[cite: 36, 37, 40].</p>
-            </div>
-
-            <div class="exp-item">
-                <h4>Founding Team @ Heltar</h4>
-                <span>Dec 2022 - May 2023</span>
-                <p>Architected the transition from monolith to cloud-based microservices on AWS, enabling the platform to scale from EdTech to a B2B WhatsApp CRM[cite: 53, 56, 58].</p>
-            </div>
-        </section>
-
-        <section class="bio-section">
-            <h2>Education</h2>
-            <div class="exp-item">
-                <h4>Indian Institute of Technology, Kharagpur</h4>
-                <span>Dual Degree, Industrial and Systems Engineering</span>
-            </div>
-        </section>
-    </main>
+        </div>
+        <div class="about-label" style="margin-top: 2rem;">// education</div>
+        <div class="about-body">
+            <p><strong>Indian Institute of Technology (IIT), Kharagpur</strong> (2019 &mdash; 2024)<br>
+            Dual Degree (B.Tech + M.Tech), Industrial &amp; Systems Engineering &middot; Micro-specialization in AI &middot; CGPA: 7.75/10</p>
+            <p><strong>M.Tech Thesis:</strong> Content-based recommendation system for short-form fashion video using Mask R-CNN; engineered feature-extraction pipeline for granular fashion attributes, achieving mAP 0.76 (35% over baseline).</p>
+        </div>
+        <div class="about-label" style="margin-top: 2rem;">// leadership</div>
+        <div class="about-body">
+            <p><strong>Hall President &ndash; Azad Hall of Residence, IIT Kharagpur</strong> (Aug 2022 &ndash; Apr 2023)<br>
+            Elected by 730+ students; managed 2.7Cr (~$285K) annual budget, led an 80-member 3-tier council, raised 11L+ in alumni funds, and led COVID medical logistics and contact tracing for the hall.</p>
+        </div>
+    </div>
+    </section>
 
     <footer>
-        <p>&copy; 2025 Flanker42 Data Solutions.</p>
-        <address class="address">
-            WJM9+PP7 Block 5, 450, KHB Colony<br>
-            5th Block, Koramangala, Bengaluru, Karnataka 560095
-        </address>
+        <span>© 2026 Dhruv Rai — Built &amp; shipped from Bengaluru.</span>
+        <span>v2.0 / last updated May 2026</span>
     </footer>
 
 </body>

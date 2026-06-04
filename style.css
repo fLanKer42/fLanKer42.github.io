@@ -1,17 +1,428 @@
-.bg-jumbo {
-    background-image: url('./images/background.jpg');
-    background-position: top;
-}
-.text-white {
-    color: white;
-}
-.fakeimg {
-    height: 200px;
-    background: rgb(243, 241, 241);
-    text-align: center;
-}
-.boxer {
-    border-style: ridge;
-    margin-bottom: 10px;
-    padding-left: 10px;
-}
+:root {
+            --bg: #0f172a;
+            --ink: #f8fafc;
+            --muted: #94a3b8;
+            --line: #1e293b;
+            --accent: #10b981;
+            --paper: #1e293b;
+            --card: #334155;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            line-height: 1.6;
+            font-size: 16px;
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 1px 1px, rgba(248,250,252,0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* Top Bar */
+        .topbar {
+            border-bottom: 1px solid var(--line);
+            background: var(--bg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+        .topbar-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+        }
+        .topbar-left { display: flex; gap: 2rem; align-items: center; }
+        .signal {
+            display: inline-block;
+            width: 8px; height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+        .topbar-right { display: flex; gap: 1.5rem; }
+        .topbar-right a { transition: color 0.2s; }
+        .topbar-right a:hover { color: var(--accent); }
+
+        /* Hero */
+        .hero {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 5rem 2rem 4rem;
+            position: relative;
+        }
+        .hero-meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .hero-meta span::before {
+            content: "→ ";
+            color: var(--accent);
+        }
+        .hero h1 {
+            font-family: 'Fraunces', serif;
+            font-weight: 900;
+            font-size: clamp(3rem, 9vw, 7.5rem);
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+            margin-bottom: 2rem;
+            font-variation-settings: "opsz" 144;
+        }
+        .hero h1 em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--accent);
+        }
+        .hero-tagline {
+            max-width: 640px;
+            font-size: 1.35rem;
+            line-height: 1.5;
+            color: var(--ink);
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+        .hero-tagline strong { font-weight: 600; }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            margin-top: 2rem;
+        }
+        .stat {
+            padding: 1.5rem 1.25rem;
+            border-right: 1px solid var(--line);
+        }
+        .stat:last-child { border-right: none; }
+        .stat-num {
+            font-family: 'Fraunces', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+        .stat-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Section header */
+        .section-header {
+            max-width: 1280px;
+            margin: 6rem auto 2rem;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 1rem;
+        }
+        .section-header h2 {
+            font-family: 'Fraunces', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .section-header .label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+        }
+
+        /* Work */
+        .work { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+        .role {
+            border-bottom: 1px solid var(--line);
+            padding: 2.5rem 0;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 3rem;
+        }
+        .role:last-child { border-bottom: none; }
+        .role-meta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+        }
+        .role-company {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+            color: var(--ink);
+        }
+        .role-period { color: var(--muted); margin-bottom: 0.6rem; }
+        .role-tag {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background: var(--ink);
+            color: var(--bg);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.4rem;
+        }
+        .role-tag.alt { background: var(--accent); color: var(--ink); }
+        .role-body h3 {
+            font-family: 'Fraunces', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.01em;
+        }
+        .role-subtitle {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        .ship-list { list-style: none; display: grid; gap: 1rem; }
+        .ship {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            transition: transform 0.2s;
+        }
+        .ship:hover { transform: translateX(4px); }
+        .ship-marker {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 700;
+            padding-top: 0.15rem;
+            white-space: nowrap;
+        }
+        .ship-content strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--ink);
+        }
+        .ship-content span { color: var(--muted); font-size: 0.95rem; }
+        .ship-content .num {
+            color: var(--accent);
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.92rem;
+        }
+
+        /* About */
+        .about {
+            max-width: 1280px;
+            margin: 6rem auto 0;
+            padding: 4rem 2rem;
+            background: var(--paper);
+            border: 1px solid var(--line);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            position: relative;
+        }
+        .about::before {
+            content: "01";
+            position: absolute;
+            top: 1rem; right: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+        .about-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent);
+        }
+        .about-body {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            line-height: 1.45;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+        }
+        .about-body p { margin-bottom: 1.25rem; }
+        .about-body p:last-child { margin-bottom: 0; }
+        .about-body em { color: var(--accent); font-style: italic; }
+
+        /* Toolkit */
+        .toolkit { max-width: 1280px; margin: 4rem auto 0; padding: 0 2rem; }
+        .toolkit-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--line);
+            border: 1px solid var(--line);
+        }
+        .tool-cell { background: var(--card); padding: 2rem 1.75rem; }
+        .tool-cell h4 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .tool-cell p {
+            font-family: 'Fraunces', serif;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        /* Closer / Contact */
+        .closer { max-width: 1280px; margin: 6rem auto 0; padding: 0 2rem; }
+        .consult-note {
+            border: 1px solid var(--line);
+            padding: 2rem 2.25rem;
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            background: var(--paper);
+            flex-wrap: wrap;
+        }
+        .consult-note-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            flex: 1;
+            min-width: 280px;
+        }
+        .consult-note-text strong {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.78rem;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+        .consult-link {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            border-bottom: 1px solid var(--ink);
+            padding-bottom: 2px;
+            transition: color 0.2s, border-color 0.2s;
+            white-space: nowrap;
+        }
+        .consult-link:hover { color: var(--accent); border-color: var(--accent); }
+
+        .contact-block { text-align: center; padding: 5rem 0 6rem; }
+        .contact-block .pre {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 1.5rem;
+        }
+        .contact-block h2 {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 2rem;
+        }
+        .contact-block h2 em {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--accent);
+        }
+        .contact-links {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .contact-pill {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            padding: 0.7rem 1.25rem;
+            border: 1px solid var(--line);
+            transition: background 0.2s, color 0.2s;
+            background: var(--bg);
+        }
+        .contact-pill:hover { background: var(--ink); color: var(--bg); }
+        .contact-pill.primary {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--ink);
+            font-weight: 600;
+        }
+        .contact-pill.primary:hover {
+            background: var(--ink);
+            border-color: var(--ink);
+            color: var(--bg);
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 1.5rem 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            max-width: 1280px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero h1, .hero-tagline, .hero-meta, .hero-grid {
+            animation: fadeUp 0.7s ease-out backwards;
+        }
+        .hero-meta { animation-delay: 0.05s; }
+        .hero h1 { animation-delay: 0.15s; }
+        .hero-tagline { animation-delay: 0.3s; }
+        .hero-grid { animation-delay: 0.45s; }
+
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr 1fr; }
+            .stat:nth-child(2) { border-right: none; }
+            .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--line); }
+            .role { grid-template-columns: 1fr; gap: 1.5rem; }
+            .about { grid-template-columns: 1fr; gap: 1.5rem; padding: 2.5rem 1.5rem; }
+            .about-body { font-size: 1.2rem; }
+            .toolkit-grid { grid-template-columns: 1fr; }
+            .topbar-inner { padding: 0.75rem 1.25rem; flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+            .topbar-left, .topbar-right { width: 100%; justify-content: space-between; }
+            .topbar-right { gap: 1rem; }
+            .hero { padding: 3rem 1.5rem 2.5rem; }
+            .work, .toolkit, .closer, .section-header { padding-left: 1.5rem; padding-right: 1.5rem; }
+            .consult-note { flex-direction: column; align-items: flex-start; }
+        }
