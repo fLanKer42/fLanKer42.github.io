@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Public Grievance Ledger · Case Study · Dhruv Rai</title>
+    <meta name="description" content="Product discovery case study: The Public Grievance Ledger, a demand-side ledger for governance in India. Founder-PM work by Dhruv Rai: 10 design docs, 22 research reports, 8 personas, zero code by design.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="topbar">
+        <div class="topbar-inner">
+            <div class="topbar-left">
+                <a href="index.html"><span><span class="signal"></span>DHRUV RAI / FLANKER42</span></a>
+                <span class="topbar-loc">Bengaluru, IN</span>
+            </div>
+            <nav class="topbar-right">
+                <a href="work.html">Work</a>
+                <a href="grievance-ledger.html" aria-current="page">Case study</a>
+                <a href="about.html">About</a>
+                <a href="toolkit.html">Toolkit</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <article class="case">
+        <header class="case-header">
+            <span class="eyebrow">Side project · Product case study · Civic tech</span>
+            <h1>The Public Grievance Ledger</h1>
+            <p class="standfirst">
+                A public, aggregated, trustworthy record of what citizens are
+                <em>actually asking for</em>: a demand-side ledger for governance in India.
+                Open source, free, non-commercial, permanently.
+            </p>
+            <span class="stamp open">Discovery closed · pre-build</span>
+
+            <dl class="case-facts">
+                <div>
+                    <dt>My role</dt>
+                    <dd>Founder / solo PM, from problem framing through the V0 launch spec</dd>
+                </div>
+                <div>
+                    <dt>Timeline</dt>
+                    <dd>Jul 2026 – ongoing</dd>
+                </div>
+                <div>
+                    <dt>Output so far</dt>
+                    <dd>10 design documents · 22 sourced research reports · 8 stakeholder personas · costed 24-month budget</dd>
+                </div>
+                <div>
+                    <dt>Code written</dt>
+                    <dd>Zero, by design. Build starts after ratification.</dd>
+                </div>
+            </dl>
+        </header>
+
+        <h2>The problem</h2>
+        <span class="entry-no">Entry 01 / Why this exists</span>
+        <p>
+            India's official grievance portals treat complaints as private tickets. There is no
+            public record of what people are collectively asking for, no visibility into whether
+            "resolved" meant anything, and real risk for anyone who complains loudly.
+        </p>
+        <ul>
+            <li><strong>Opacity.</strong> CPGRAMS and state portals offer no public view of the scale or shape of collective problems.</li>
+            <li><strong>Fake closure.</strong> "Disposed" is not "resolved": the government's own feedback calls find only 51–63% satisfaction among complainants whose cases were officially closed.</li>
+            <li><strong>Manipulation.</strong> Social media, the de-facto alternative, is astroturfable and unreliable as a measure of genuine demand.</li>
+            <li><strong>Retaliation.</strong> Documented and severe: FIRs over a pothole video, 100+ RTI activists killed. The 2014 whistleblower-protection Act was never brought into force.</li>
+        </ul>
+
+        <h2>The bet</h2>
+        <span class="entry-no">Entry 02 / Theory of change</span>
+        <p>
+            The platform's impact rests on three pillars, deliberately designed to work
+            <strong>even if government ignores it entirely</strong>:
+        </p>
+        <ul>
+            <li><strong>A public ledger</strong>: a persistent record making collective problems visible and measurable. Complaining is the write; scorecards, audits and election-time reads all run on the same data.</li>
+            <li><strong>Named accountability</strong>: response rates and resolution times by department and jurisdiction, never raw volume rankings.</li>
+            <li><strong>Permissionless routing</strong>: every grievance auto-files into the official channel that should own it, no partnership required. FixMyStreet proved the move: 98% of UK councils accepted reports they never agreed to receive.</li>
+        </ul>
+        <p>
+            Deliberate non-goals: not a government CRM, not a social network, not a polling
+            product, and no monetization design, ever. The platform publishes no analyses of its
+            own; journalists, activists and citizens build their reports on top of it.
+        </p>
+
+        <h2>The first principle</h2>
+        <span class="entry-no">Entry 03 / The constraint that shapes everything</span>
+        <blockquote>
+            "Complainants should never get identified, ever; that is the soul of this
+            open-source project."
+            <cite>Founding principle D5. It admits no exception, including the platform itself</cite>
+        </blockquote>
+        <p>
+            The required form is architectural: <strong>the platform cannot identify complainants even
+            if compelled or compromised</strong>, because data never held cannot be produced. The
+            recommended identity architecture: prove a valid credential on-device, run it through a
+            threshold OPRF across jurisdictionally-diverse operators, and receive a blindly-issued
+            BBS credential. Per issue, a scoped proof yields an unlinkable pseudonym:
+            ~200&nbsp;ms, ~1&nbsp;KB, works offline. Research along the way surfaced that every
+            existing Aadhaar-ZK nullifier design is computable by anyone holding a photocopy,
+            which makes the threshold OPRF a correctness requirement, not an optimisation.
+        </p>
+
+        <h2>The calls that mattered</h2>
+        <span class="entry-no">Entry 04 / Decision ledger, abridged</span>
+        <table class="ledger-table">
+            <thead>
+                <tr><th>Ref</th><th>Decision</th><th>Why it was hard</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>D9</td>
+                    <td><strong>Two products.</strong> V0 collects and routes complaints; V1, the ledger itself, is built only later.</td>
+                    <td>Cold start is the period of maximum astroturf leverage, and the leverage came from publishing magnitude. V0 publishes nothing derived, dissolving the launch risk.</td>
+                </tr>
+                <tr>
+                    <td>D10</td>
+                    <td><strong>A public threshold: 50,000 complaints</strong>, with a visible counter. V1 work starts the moment it is crossed.</td>
+                    <td>The risk of a two-product plan is that the second product never ships. The public threshold is the commitment device against exactly that.</td>
+                </tr>
+                <tr>
+                    <td>P4</td>
+                    <td><strong>No astroturf classifier.</strong> Describe arrival shapes, make declared collective reports first-class, and anchor magnitude to modelled expected incidence.</td>
+                    <td>Research showed distinguishing legitimate collective action from astroturfing is behaviourally undecidable: fifty organised neighbours and fifty party workers produce identical data. So change the estimand until the attack loses its point.</td>
+                </tr>
+                <tr>
+                    <td>D13</td>
+                    <td><strong>No SMS, no phone number, no PII at V0.</strong> Reporter identity is a device-bound WebCrypto key.</td>
+                    <td>Storing phone numbers against complaints would make V0 a retaliation database (the exact artefact the architecture exists to prevent), and OTP flows lose 12–40% of the funnel.</td>
+                </tr>
+                <tr>
+                    <td>·</td>
+                    <td><strong>No SLA clock anywhere in the interface.</strong> Deadlines surface only as vested statutory entitlements: "the law says you are owed ₹340."</td>
+                    <td>Evidence says the demobilising ingredient is unsurprisingness, not negativity. A countdown that expires quietly teaches learned helplessness; a vested entitlement accumulates.</td>
+                </tr>
+                <tr>
+                    <td>D7</td>
+                    <td><strong>Infrastructure, not a publication.</strong> The platform never publishes its own analyses; election windows freeze data rather than hide it.</td>
+                    <td>Credibility is the core asset. The moment the platform editorialises, it becomes a participant in the fights it exists to measure.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>What the research disallowed</h2>
+        <span class="entry-no">Entry 05 / Constraints found, not chosen</span>
+        <p>
+            22 sourced research reports set the boundaries. The ones that reshaped the product:
+        </p>
+        <ul>
+            <li><strong>No national ward-boundary dataset exists in India.</strong> Ward-level publication needs per-city sourcing, so national scope holds only for issue-scale grievances.</li>
+            <li><strong>The digital-access denominator stops at district level.</strong> Imputing ward access from district means makes a rich ward and a slum ward identical, so district is the honest floor for headline metrics.</li>
+            <li><strong>Reporting bias is non-monotonic</strong>: middle-deprivation areas report most while the most deprived have the most incidents. Per-capita normalisation does not fix it; every count ships with a coverage indicator.</li>
+            <li><strong>The 3 GB RAM cliff.</strong> ZK proving fails systematically below it, forcing the lighter BBS path for everyday actions and testing on a ₹15,000 handset from day one.</li>
+        </ul>
+
+        <h2>Where it stands</h2>
+        <span class="entry-no">Entry 06 / Running balance</span>
+        <p>
+            Discovery closed on 31 Jul 2026 with all four founding design sessions complete and the
+            <strong>V0 launch spec drafted</strong>, the last document before code:
+        </p>
+        <ul>
+            <li><strong>Launch wedge verified:</strong> national service-delivery failure (driving-licence and transport services first; a live national counter of 32.09&nbsp;Cr applications provides the denominator), with Bengaluru as the first hyperlocal city, chosen for Karnataka's Sakala service-guarantee data.</li>
+            <li><strong>Routing table drafted</strong> against a verified 92-ministry directory of grievance officers; user-mediated send keeps the platform's copy pseudonymous.</li>
+            <li><strong>Deliverability priced and de-risked</strong> at ~₹330/month, including the structural finding that nearly all central-government mail flows through a single gateway, which turned the bounce policy into a launch requirement.</li>
+            <li><strong>24-month budget costed</strong> (₹18–30 lakh for a credible shot at the median timeline) with pre-committed checkpoint bands and kill/pivot triggers, so a correctly-performing month six is not misread as failure.</li>
+        </ul>
+        <p>
+            Next: legal entity formation, deliberately sequenced first because entity registration,
+        	sender-domain warm-up and statutory clocks all run on external time that founder effort
+            cannot compress.
+        </p>
+
+        <h2>Why it's on this site</h2>
+        <span class="entry-no">Entry 07 / What it demonstrates</span>
+        <p>
+            This is PM craft with no employer, no team and no deadline cover: framing a problem,
+            hiring research instead of opinions, making hard calls with named trade-offs, cutting
+            beloved scope (a Promise Ledger died here), and designing commitment devices against
+            my own future rationalisations. The discovery corpus (10 design documents and 22
+            research reports) is available on request, and I'm happy to walk through any decision
+            in it.
+        </p>
+
+        <div class="case-cta">
+            <p>Want the full spec walk-through, or to argue with a decision?</p>
+            <a href="mailto:dhruv.rai2001@gmail.com?subject=Grievance%20Ledger" class="contact-pill primary">Write to me →</a>
+        </div>
+    </article>
+
+    <div class="flow-nav">
+        <a href="about.html" class="contact-pill primary">
+            <span>Next: About</span>
+            <span style="font-family: monospace;">&rarr;</span>
+        </a>
+    </div>
+
+    <footer>
+        <span>© 2026 Dhruv Rai · Built &amp; shipped from Bengaluru.</span>
+        <span>v3.0 / last updated Jul 2026</span>
+    </footer>
+
+</body>
+</html>
